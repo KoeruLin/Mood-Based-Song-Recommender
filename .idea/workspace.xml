@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e0498e4-9e11-4ced-b7a5-4731cc5cf9c1" name="Changes" comment="Start">
-      <change afterPath="$PROJECT_DIR$/mood/src/app/calm/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mood/src/app/energetic/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mood/src/app/melancholic/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mood/src/app/tense/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/mood/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/public/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/public/globe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/public/window.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/calm/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/calm/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/energetic/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/energetic/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/melancholic/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/melancholic/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/tense/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/tense/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +37,7 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -59,9 +70,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -69,14 +83,26 @@
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
     &quot;npm.lint.executor&quot;: &quot;Run&quot;,
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/sulanchen/WebstormProjects/Mood Based Song Recommender/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/sulanchen/WebstormProjects/Mood Based Song Recommender/mood/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/mood/src/app" />
       <recent name="$PROJECT_DIR$/mood/src/app/components" />
+      <recent name="$PROJECT_DIR$/mood/src/app/api" />
+      <recent name="$PROJECT_DIR$/mood/src/app" />
       <recent name="$PROJECT_DIR$/mood" />
     </key>
   </component>
@@ -156,6 +182,16 @@
       <workItem from="1747019893007" duration="4000" />
       <workItem from="1747063787734" duration="2785000" />
       <workItem from="1747092790380" duration="3199000" />
+      <workItem from="1747102238794" duration="1957000" />
+      <workItem from="1747105013008" duration="211000" />
+      <workItem from="1747138034638" duration="991000" />
+      <workItem from="1747139838958" duration="1993000" />
+      <workItem from="1747141845101" duration="3454000" />
+      <workItem from="1747146152047" duration="445000" />
+      <workItem from="1747249119346" duration="1056000" />
+      <workItem from="1747250189690" duration="2510000" />
+      <workItem from="1747253667696" duration="3526000" />
+      <workItem from="1747271621439" duration="3378000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
@@ -170,6 +206,12 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pages/api/sentiment.js" />
+        <option value="$PROJECT_DIR$/pages/api/sentimentAnalysis.jsx" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
