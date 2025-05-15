@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e0498e4-9e11-4ced-b7a5-4731cc5cf9c1" name="Changes" comment="Start">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/mood/eslint.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/calm/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/calm/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/energetic/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/energetic/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/melancholic/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/melancholic/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/tense/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/tense/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -100,10 +87,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mood" />
       <recent name="$PROJECT_DIR$/mood/src/app/components" />
       <recent name="$PROJECT_DIR$/mood/src/app/api" />
       <recent name="$PROJECT_DIR$/mood/src/app" />
-      <recent name="$PROJECT_DIR$/mood" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -192,6 +179,8 @@
       <workItem from="1747250189690" duration="2510000" />
       <workItem from="1747253667696" duration="3526000" />
       <workItem from="1747271621439" duration="3378000" />
+      <workItem from="1747275357671" duration="117000" />
+      <workItem from="1747310839265" duration="5025000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />

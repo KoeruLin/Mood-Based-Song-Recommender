@@ -1,7 +1,5 @@
-const API_KEY = process.env.HUGGING_FACE_API_KEY!;
-
 export interface SentimentAnalysisInput {
-  input: string;
+  inputs: string;
 }
 
 async function query(data: SentimentAnalysisInput) {
@@ -9,15 +7,15 @@ async function query(data: SentimentAnalysisInput) {
     "https://router.huggingface.co/hf-inference/models/j-hartmann/emotion-english-distilroberta-base",
     {
       headers: {
-        Authorization: API_KEY,
-        //authorization error
+        Authorization: `Bearer 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`,
         "Content-Type": "application/json",
       },
       method: "POST",
       body: JSON.stringify(data),
     },
   );
-  return await response.json();
+  const result = await response.json();
+  return result[0][0];
 }
 
 export default query;
