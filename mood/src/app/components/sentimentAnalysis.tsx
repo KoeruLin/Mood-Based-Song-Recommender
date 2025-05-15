@@ -18,4 +18,15 @@ async function query(data: SentimentAnalysisInput) {
   return result[0][0];
 }
 
-export default query;
+async function runQuery(response: string) {
+  const input: SentimentAnalysisInput = { inputs: response };
+
+  try {
+    const result = await query(input);
+    return JSON.stringify(result, null, 2);
+  } catch (error) {
+    return "Error fetching sentiment";
+  }
+}
+
+export default runQuery;

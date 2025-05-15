@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e0498e4-9e11-4ced-b7a5-4731cc5cf9c1" name="Changes" comment="Start">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/page.tsx" afterDir="false" />
@@ -180,7 +178,7 @@
       <workItem from="1747253667696" duration="3526000" />
       <workItem from="1747271621439" duration="3378000" />
       <workItem from="1747275357671" duration="117000" />
-      <workItem from="1747310839265" duration="5025000" />
+      <workItem from="1747310839265" duration="6761000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
