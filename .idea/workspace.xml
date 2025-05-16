@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e0498e4-9e11-4ced-b7a5-4731cc5cf9c1" name="Changes" comment="Start">
-      <change afterPath="$PROJECT_DIR$/.idea/MoodBasedSongRecommender.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mood/src/app/components/authorization/encoder.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mood/src/app/components/authorization/songFinder.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mood/src/app/components/authorization/spotifyAuthentication.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mood/src/app/components/input.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/components/authorization/authentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/authorization/authentication.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/components/authorization/songFinder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/authorization/songFinder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/components/authorization/spotifyAuthentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/authorization/spotifyAuthentication.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/songRecommendation/[...nextauth].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/authorization/authentication.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/songRecommendation/songFinder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/authorization/callAPI.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +43,9 @@
     &quot;accountId&quot;: &quot;731321dc-5201-4bdd-a7ce-6508bd48f2a8&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="showPreview" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -193,6 +190,8 @@
       <workItem from="1747339951918" duration="6353000" />
       <workItem from="1747350815796" duration="22000" />
       <workItem from="1747351484059" duration="5060000" />
+      <workItem from="1747364518967" duration="287000" />
+      <workItem from="1747397165810" duration="7308000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />

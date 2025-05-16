@@ -19,8 +19,8 @@ async function query(data: SentimentAnalysisInput): Promise<SentimentScore> {
       body: JSON.stringify(data),
     },
   );
-  const result: SentimentScore = await response.json();
-  return result;
+  const result: SentimentScore[][] = await response.json();
+  return result[0][0];
 }
 
 async function runQuery(response: string): Promise<string> {

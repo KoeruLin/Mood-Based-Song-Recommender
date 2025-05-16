@@ -1,30 +1,32 @@
 "use client";
+import { useState, useEffect } from "react";
 
-export async function fetchProfile() {
-  const accessToken: string | null = localStorage.getItem("accessToken");
-  if (!accessToken) {
-    console.log("Invalid token");
-    return;
-  }
-  try {
-    const response = await fetch("https://api.spotify.com/v1/me", {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
-    const data: JSON = await response.json();
-    return data;
-  } catch (error) {
-    console.log("Error fetching profile:", error);
-  }
-}
+export default function SongFinder() {
+  const [output, setOutput] = useState<string>("Test");
 
-export default async function SongFinder(): Promise<any> {
-  const result: JSON | undefined = await fetchProfile();
-  console.log(result);
-  try {
-    return <p>JSON.stringify(result, null, 2)</p>;
-  } catch (error) {
-    return <p>"Error fetching user profile"</p>;
-  }
+  useEffect((): void => {
+    (async (): Promise<void> => {
+      const accessToken: string | null = localStorage.getItem("accessToken");
+      if (!accessToken) {
+        setOutput("Access token missing.");
+        return;
+      }
+      try {
+        const response: Response = await fetch(
+          "https://api.spotify.com/v1/me",
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          },
+        );
+        const data: any = await response.json();
+        setOutput(JSON.stringify(data, null, 2));
+      } catch (error: any) {
+        setOutput("Error fetching user profile: " + error.message);
+      }
+    })();
+  }, []);
+
+  return <pre>{output}</pre>;
 }

@@ -5,18 +5,18 @@ import { initiateAuthFlow, getToken } from "./authentication";
 export default function SpotifyAuth() {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  useEffect(() => {
+  useEffect((): void => {
     if (typeof window === "undefined") return;
 
     const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
-    const error = params.get("error");
+    const code: string | null = params.get("code");
+    const error: string | null = params.get("error");
 
-    (async () => {
+    (async (): Promise<void> => {
       try {
         await login(code, error);
       } catch (error) {
-        console.error("Login process failed:", error);
+        throw new Error("Login process failed: " + error);
       }
     })();
   }, []);
@@ -41,13 +41,13 @@ export default function SpotifyAuth() {
           document.title,
           window.location.pathname,
         );
-      } catch (err) {
-        console.error("Token exchange failed:", err);
+      } catch (error) {
+        alert(error);
       }
       return;
     }
 
-    const accessToken = localStorage.getItem("access_token");
+    const accessToken: string | null = localStorage.getItem("access_token");
 
     if (accessToken) {
       setLoggedIn(true);

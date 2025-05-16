@@ -45,7 +45,9 @@ export async function getToken(code: string): Promise<void> {
   const url = "https://accounts.spotify.com/api/token";
   const payload: RequestInit = {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
     body: new URLSearchParams({
       client_id: clientId,
       grant_type: "authorization_code",
@@ -54,16 +56,19 @@ export async function getToken(code: string): Promise<void> {
       code_verifier: codeVerifier,
     }),
   };
-
-  const response = await fetch(url, payload);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch token: ${response.statusText}`);
-  }
-
-  const data: TokenResponse = await response.json();
-  localStorage.setItem("access_token", data.access_token);
-  if (data.refresh_token) {
-    localStorage.setItem("refresh_token", data.refresh_token);
+  try {
+    const response: Response = await fetch(url, payload);
+    if (!response.ok) {
+      alert(`Error: Failed to fetch token: ${response.statusText}`);
+      return;
+    }
+    const data: TokenResponse = await response.json();
+    localStorage.setItem("access_token", data.access_token);
+    if (data.refresh_token) {
+      localStorage.setItem("refresh_token", data.refresh_token);
+    }
+  } catch (error: any) {
+    alert(`Error: Failed to fetch token: ${error.message}`);
   }
 }
 
@@ -86,7 +91,7 @@ export async function getRefreshToken(): Promise<void> {
 
   const response = await fetch(url, payload);
   if (!response.ok) {
-    throw new Error(`Failed to refresh token: ${response.statusText}`);
+    alert(`Error: Failed to refresh token: ${response.statusText}`);
   }
 
   const data: TokenResponse = await response.json();
