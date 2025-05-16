@@ -1,20 +1,16 @@
-"use client";
-import { useState } from "react";
 import "./globals.css";
-import runQuery from "@/app/components/sentimentAnalysis";
+import Input from "@/app/components/input";
+import SpotifyAuth from "@/app/components/authorization/spotifyAuthentication";
+import SongFinder from "@/app/components/authorization/songFinder";
 
 export default function Home() {
-  const [output, setOutput] = useState("Loading...");
-
-  async function handleClick() {
-    const result = await runQuery("Give me something exciting and energetic");
-    setOutput(result);
-  }
-
   return (
     <div>
-      <button onClick={() => handleClick()}>Analyze Sentiment</button>
-      <pre>{output}</pre>
+      <Input />
+      <main className="flex justify-center p-24 font-sans">
+        <SpotifyAuth />
+      </main>
+      <SongFinder />
     </div>
   );
 }

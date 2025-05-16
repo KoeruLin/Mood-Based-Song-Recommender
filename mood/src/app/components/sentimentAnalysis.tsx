@@ -2,7 +2,12 @@ export interface SentimentAnalysisInput {
   inputs: string;
 }
 
-async function query(data: SentimentAnalysisInput) {
+interface SentimentScore {
+  label: string;
+  score: number;
+}
+
+async function query(data: SentimentAnalysisInput): Promise<SentimentScore> {
   const response = await fetch(
     "https://router.huggingface.co/hf-inference/models/j-hartmann/emotion-english-distilroberta-base",
     {
@@ -14,15 +19,15 @@ async function query(data: SentimentAnalysisInput) {
       body: JSON.stringify(data),
     },
   );
-  const result = await response.json();
-  return result[0][0];
+  const result: SentimentScore = await response.json();
+  return result;
 }
 
-async function runQuery(response: string) {
+async function runQuery(response: string): Promise<string> {
   const input: SentimentAnalysisInput = { inputs: response };
 
   try {
-    const result = await query(input);
+    const result: SentimentScore = await query(input);
     return JSON.stringify(result, null, 2);
   } catch (error) {
     return "Error fetching sentiment";
