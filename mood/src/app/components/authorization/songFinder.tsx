@@ -6,7 +6,7 @@ export default function SongFinder() {
 
   useEffect((): void => {
     (async (): Promise<void> => {
-      const accessToken: string | null = localStorage.getItem("accessToken");
+      const accessToken: string | null = localStorage.getItem("access_token");
       if (!accessToken) {
         setOutput("Access token missing.");
         return;
