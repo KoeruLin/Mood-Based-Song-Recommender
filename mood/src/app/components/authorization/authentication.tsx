@@ -37,7 +37,7 @@ export async function initiateAuthFlow(): Promise<void> {
 }
 
 export async function getToken(code: string): Promise<void> {
-  const codeVerifier = localStorage.getItem("code_verifier");
+  const codeVerifier: string | null = localStorage.getItem("code_verifier");
   if (!codeVerifier) {
     throw new Error("Code verifier not found in localStorage.");
   }
@@ -59,7 +59,9 @@ export async function getToken(code: string): Promise<void> {
   try {
     const response: Response = await fetch(url, payload);
     if (!response.ok) {
-      alert(`Error: Failed to fetch token: ${response.statusText}`);
+      alert(
+        `Error: Failed to fetch token response payload: ${response.statusText}`,
+      );
       return;
     }
     const data: TokenResponse = await response.json();
@@ -89,7 +91,7 @@ export async function getRefreshToken(): Promise<void> {
     }),
   };
 
-  const response = await fetch(url, payload);
+  const response: Response = await fetch(url, payload);
   if (!response.ok) {
     alert(`Error: Failed to refresh token: ${response.statusText}`);
   }

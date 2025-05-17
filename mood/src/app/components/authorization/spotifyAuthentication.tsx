@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { initiateAuthFlow, getToken } from "./authentication";
+import { initiateAuthFlow, getToken, getRefreshToken } from "./authentication";
 
 export default function SpotifyAuth() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -13,56 +13,72 @@ export default function SpotifyAuth() {
     const error: string | null = params.get("error");
 
     (async (): Promise<void> => {
-      try {
-        await login(code, error);
-      } catch (error) {
-        throw new Error("Login process failed: " + error);
-      }
-    })();
-  }, []);
-
-  const login = async (
-    code: string | null,
-    error: string | null,
-  ): Promise<void> => {
-    if (error) {
-      alert("Authorization denied. Please try again.");
-      window.history.replaceState({}, document.title, window.location.pathname);
-      setLoggedIn(false);
-      return;
-    }
-
-    if (code) {
-      try {
-        await getToken(code);
-        setLoggedIn(true);
+      if (error) {
+        alert("Authorization denied. Please try again.");
         window.history.replaceState(
           {},
           document.title,
           window.location.pathname,
         );
-      } catch (error) {
-        alert(error);
+        return;
       }
-      return;
-    }
 
-    const accessToken: string | null = localStorage.getItem("access_token");
+      if (code) {
+        try {
+          await getToken(code);
+          setLoggedIn(true);
+          window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname,
+          );
+        } catch {
+          alert("Login failed. Try again.");
+        }
+        return;
+      }
 
-    if (accessToken) {
-      setLoggedIn(true);
-    }
-  };
+      const token: string | null = localStorage.getItem("access_token");
+      if (token) {
+        const response: Response = await fetch(
+          "https://api.spotify.com/v1/me",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
 
-  if (loggedIn) {
-    return (
-      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
-        Logged In
-      </p>
-    );
-  }
+        if (response.ok) {
+          setLoggedIn(true);
+        } else {
+          try {
+            await getRefreshToken();
+            const newToken: string | null =
+              localStorage.getItem("access_token");
+            const newResponse: Response = await fetch(
+              "https://api.spotify.com/v1/me",
+              {
+                headers: { Authorization: `Bearer ${newToken}` },
+              },
+            );
 
-  return (
+            if (newResponse.ok) {
+              setLoggedIn(true);
+            } else {
+              alert("Session expired. Please log in again.");
+            }
+          } catch {
+            alert("Could not refresh session.");
+          }
+        }
+      }
+    })();
+  }, []);
+
+  return loggedIn ? (
+    <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+      Logged In
+    </p>
+  ) : (
     <button
       onClick={initiateAuthFlow}
       className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
