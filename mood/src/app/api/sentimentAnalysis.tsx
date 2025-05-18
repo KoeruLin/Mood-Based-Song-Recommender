@@ -8,7 +8,7 @@ interface SentimentScore {
 }
 
 async function query(data: SentimentAnalysisInput): Promise<SentimentScore> {
-  const response = await fetch(
+  const response: Response = await fetch(
     "https://router.huggingface.co/hf-inference/models/j-hartmann/emotion-english-distilroberta-base",
     {
       headers: {

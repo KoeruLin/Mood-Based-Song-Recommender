@@ -16,9 +16,9 @@ interface TokenResponse {
 }
 
 export async function initiateAuthFlow(): Promise<void> {
-  const codeVerifier = generateRandomString(64);
-  const hashed = await sha256(codeVerifier);
-  const codeChallenge = base64encode(hashed);
+  const codeVerifier: string = generateRandomString(64);
+  const hashed: ArrayBuffer = await sha256(codeVerifier);
+  const codeChallenge: string = base64encode(hashed);
 
   localStorage.setItem("code_verifier", codeVerifier);
 
@@ -58,16 +58,14 @@ export async function getToken(code: string): Promise<void> {
   };
   try {
     const response: Response = await fetch(url, payload);
-    if (!response.ok) {
-      alert(
-        `Error: Failed to fetch token response payload: ${response.statusText}`,
-      );
-      return;
-    }
+    // response is unsuccessful
     const data: TokenResponse = await response.json();
     localStorage.setItem("access_token", data.access_token);
     if (data.refresh_token) {
       localStorage.setItem("refresh_token", data.refresh_token);
+    }
+    if (data.expires_in) {
+      localStorage.setItem("expires_in", data.expires_in.toString());
     }
   } catch (error: any) {
     alert(`Error: Failed to fetch token: ${error.message}`);
@@ -75,8 +73,9 @@ export async function getToken(code: string): Promise<void> {
 }
 
 export async function getRefreshToken(): Promise<void> {
-  const refreshToken = localStorage.getItem("refresh_token");
+  const refreshToken: string | null = localStorage.getItem("refresh_token");
   if (!refreshToken) {
+    alert("Refresh token not found.");
     throw new Error("Refresh token not found.");
   }
 

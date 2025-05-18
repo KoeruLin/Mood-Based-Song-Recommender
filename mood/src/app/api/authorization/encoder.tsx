@@ -4,7 +4,10 @@ export function generateRandomString(length: number): string {
   const values: Uint8Array<ArrayBuffer> = crypto.getRandomValues(
     new Uint8Array(length),
   );
-  return values.reduce((acc, x) => acc + possible[x % possible.length], "");
+  return values.reduce(
+    (acc: string, x: number): string => acc + possible[x % possible.length],
+    "",
+  );
 }
 
 export async function sha256(plain: string): Promise<ArrayBuffer> {

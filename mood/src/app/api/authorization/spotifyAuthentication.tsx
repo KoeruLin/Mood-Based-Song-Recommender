@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { initiateAuthFlow, getToken, getRefreshToken } from "./authentication";
 
+// invalid token error is because the associated token is expired so it's invalid
 export default function SpotifyAuth() {
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -26,6 +27,11 @@ export default function SpotifyAuth() {
       if (code) {
         try {
           await getToken(code);
+          const expire: number =
+            Date.now() + Number(localStorage.getItem("expires_in")) * 1000;
+          if (Date.now() > expire) {
+            await getRefreshToken();
+          }
           setLoggedIn(true);
           window.history.replaceState(
             {},
@@ -37,45 +43,11 @@ export default function SpotifyAuth() {
         }
         return;
       }
-
-      const token: string | null = localStorage.getItem("access_token");
-      if (token) {
-        const response: Response = await fetch(
-          "https://api.spotify.com/v1/me",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          },
-        );
-
-        if (response.ok) {
-          setLoggedIn(true);
-        } else {
-          try {
-            await getRefreshToken();
-            const newToken: string | null =
-              localStorage.getItem("access_token");
-            const newResponse: Response = await fetch(
-              "https://api.spotify.com/v1/me",
-              {
-                headers: { Authorization: `Bearer ${newToken}` },
-              },
-            );
-
-            if (newResponse.ok) {
-              setLoggedIn(true);
-            } else {
-              alert("Session expired. Please log in again.");
-            }
-          } catch {
-            alert("Could not refresh session.");
-          }
-        }
-      }
     })();
   }, []);
 
   return loggedIn ? (
-    <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+    <p className="flex justify-center max-w-1/12 bg-blue-500 text-white font-bold py-2 px-4 rounded">
       Logged In
     </p>
   ) : (
