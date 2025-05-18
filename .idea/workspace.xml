@@ -1,3 +1,4 @@
+users
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
@@ -6,13 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e0498e4-9e11-4ced-b7a5-4731cc5cf9c1" name="Changes" comment="Start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/authorization/authentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/authentication.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/authorization/encoder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/encoder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/authorization/songFinder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/songFinder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/authorization/spotifyAuthentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/spotifyAuthentication.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/components/sentimentAnalysis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/sentimentAnalysis.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,34 +52,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Node.js.next.config.ts.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/sulanchen/WebstormProjects/MoodBasedSongRecommender",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "npm.lint.executor": "Run",
-    "npm.start.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/sulanchen/WebstormProjects/MoodBasedSongRecommender/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "/Users/sulanchen/WebstormProjects/MoodBasedSongRecommender/mood/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Node.js.next.config.ts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sulanchen/WebstormProjects/MoodBasedSongRecommender&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/sulanchen/WebstormProjects/MoodBasedSongRecommender/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/sulanchen/WebstormProjects/MoodBasedSongRecommender/mood/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -204,7 +198,8 @@
       <workItem from="1747514903392" duration="2070000" />
       <workItem from="1747518488181" duration="2453000" />
       <workItem from="1747520976314" duration="308000" />
-      <workItem from="1747521342164" duration="12870000" />
+      <workItem from="1747521342164" duration="13415000" />
+      <workItem from="1747543002687" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
