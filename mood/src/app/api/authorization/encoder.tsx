@@ -24,4 +24,5 @@ export function base64encode(input: ArrayBuffer): string {
 
 export const clientId = "59f27b5536e34160bd579c417670ff86";
 export const redirectUri = "http://[::1]:3000";
-export const scope = "user-read-private user-read-email user-library-read";
+export const scope =
+  "user-read-private user-read-email user-library-read playlist-read-private";

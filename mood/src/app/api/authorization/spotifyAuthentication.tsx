@@ -2,7 +2,13 @@
 import { useEffect, useState } from "react";
 import { initiateAuthFlow, getToken, getRefreshToken } from "./authentication";
 
-// invalid token error is because the associated token is expired so it's invalid
+export async function refreshToken(): Promise<void> {
+  const expire: number = Number(localStorage.getItem("expires_at"));
+  if (!(Date.now() >= expire)) {
+    await getRefreshToken();
+  }
+}
+
 export default function SpotifyAuth() {
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -27,11 +33,7 @@ export default function SpotifyAuth() {
       if (code) {
         try {
           await getToken(code);
-          const expire: number =
-            Date.now() + Number(localStorage.getItem("expires_in")) * 1000;
-          if (Date.now() > expire) {
-            await getRefreshToken();
-          }
+          await refreshToken();
           setLoggedIn(true);
           window.history.replaceState(
             {},
@@ -39,7 +41,7 @@ export default function SpotifyAuth() {
             window.location.pathname,
           );
         } catch {
-          alert("Login failed. Try again.");
+          console.log("Login Failed.");
         }
         return;
       }

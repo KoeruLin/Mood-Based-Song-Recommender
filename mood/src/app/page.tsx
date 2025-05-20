@@ -14,7 +14,6 @@ export default function Home() {
         </p>
         <Input />
       </main>
-      <SongFinder />
       <SpotifyAuth />
     </>
   );

@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e0498e4-9e11-4ced-b7a5-4731cc5cf9c1" name="Changes" comment="Start">
+      <change afterPath="$PROJECT_DIR$/mood/src/app/api/readTextFile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mood/src/app/api/sortByMood/anger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mood/src/app/api/sortByMood/disgust" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mood/src/app/api/sortByMood/fear" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mood/src/app/api/sortByMood/joy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mood/src/app/api/sortByMood/neutral" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mood/src/app/api/sortByMood/sadness" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mood/src/app/api/sortByMood/suprise" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/authentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/authentication.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/encoder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/encoder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/songFinder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/songFinder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/spotifyAuthentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/spotifyAuthentication.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sentimentAnalysis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/sentimentAnalysis.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/calm/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/components/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/energetic/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/melancholic/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/tense/page.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,6 +218,10 @@
       <workItem from="1747520976314" duration="308000" />
       <workItem from="1747521342164" duration="13415000" />
       <workItem from="1747543002687" duration="8000" />
+      <workItem from="1747614694438" duration="1319000" />
+      <workItem from="1747616026931" duration="9839000" />
+      <workItem from="1747657192434" duration="11127000" />
+      <workItem from="1747686475010" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />

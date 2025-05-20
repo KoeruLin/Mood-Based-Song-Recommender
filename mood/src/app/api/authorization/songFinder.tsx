@@ -1,14 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
+import { refreshToken } from "./spotifyAuthentication";
 
 interface Track {
   id: string;
   name: string;
   artist: string;
   image: string;
+  popularity: number;
 }
 
-async function getTracks(accessToken: string, data: any): Promise<Track[]> {
+export async function getTracks(
+  accessToken: string,
+  data: any,
+): Promise<Track[]> {
   const tracks: Track[] = [];
   for (const playList of data.items) {
     const list: Response = await fetch(
@@ -26,8 +31,36 @@ async function getTracks(accessToken: string, data: any): Promise<Track[]> {
         name: song.track.name,
         artist: song.track.artists[0].name,
         image: song.track.album.images[2].url,
+        popularity: song.track.popularity,
       });
     }
+  }
+
+  return tracks;
+}
+
+export async function getTracksString(
+  accessToken: string,
+  data: string[],
+): Promise<Track[]> {
+  const tracks: Track[] = [];
+  for (const playList of data) {
+    const list: Response = await fetch(
+      `https://api.spotify.com/v1/tracks/${playList}`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      },
+    );
+    const tracksData: any = await list.json();
+    tracks.push({
+      id: tracksData.id,
+      name: tracksData.name,
+      artist: tracksData.artists[0].name,
+      image: tracksData.album.images[2].url,
+      popularity: tracksData.popularity,
+    });
   }
 
   return tracks;
@@ -39,6 +72,7 @@ export default function SongFinder() {
 
   useEffect((): void => {
     (async (): Promise<void> => {
+      await refreshToken();
       const accessToken: string | null = localStorage.getItem("access_token");
       if (!accessToken) {
         setOutput("Access token missing.");
@@ -53,10 +87,16 @@ export default function SongFinder() {
             },
           },
         );
+        if (!getPlayList.ok) {
+          alert(
+            `Spotify API error: ${getPlayList.status} ${getPlayList.statusText}`,
+          );
+        }
         const data: any = await getPlayList.json();
         const result: Track[] = await getTracks(accessToken, data);
         setSongs(result);
       } catch (error: any) {
+        alert(error);
         setOutput("Error fetching user profile: " + error.message);
       }
     })();
@@ -64,14 +104,16 @@ export default function SongFinder() {
 
   return (
     <div className="grid grid-cols-3 gap-1">
-      {songs.map((song: Track) => (
+      {songs.map((song: Track, index: number) => (
         <div
-          key={song.id + songs.indexOf(song)}
+          key={`${song.id}-${index}`}
           className="flex flex-col items-center gap-2"
         >
           <img src={song.image} alt={song.name} />
-          <pre>{song.name}</pre>
-          <pre>{song.artist}</pre>
+          <p>{song.id}</p>
+          <p>{song.name}</p>
+          <p>{song.artist}</p>
+          <p>{song.popularity}</p>
           <hr />
           <hr />
         </div>

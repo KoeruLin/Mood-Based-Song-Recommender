@@ -1,11 +1,14 @@
 "use client";
 import "../globals.css";
 import React, { useState } from "react";
+import { readID, allTracks } from "@/app/api/readID";
+import { getTracks, getTracksString } from "@/app/api/authorization/songFinder";
 import runQuery from "@/app/api/sentimentAnalysis";
 
 export default function Input() {
   const [prompt, setPrompt] = useState("");
   const [output, setOutput] = useState("");
+  const [tracks, setTracks] = useState<any[]>([]);
 
   async function handleChange(
     event: React.ChangeEvent<HTMLInputElement>,
@@ -19,7 +22,18 @@ export default function Input() {
     event: React.FormEvent<HTMLFormElement>,
   ): Promise<void> {
     event.preventDefault();
-    setOutput(await runQuery(prompt));
+    const result: string = await runQuery(prompt);
+    const trimmedResult: string = JSON.parse(result).toLowerCase().trim();
+    if (trimmedResult in allTracks) {
+      const specificEmotion: string[] =
+        allTracks[trimmedResult as keyof typeof allTracks];
+      const topFiveTracks: string[] = await readID(specificEmotion);
+      const fetchedTracks = await getTracksString(
+        localStorage.getItem("access_token") as string,
+        topFiveTracks,
+      );
+      setTracks(fetchedTracks);
+    }
   }
 
   return (
@@ -44,6 +58,20 @@ export default function Input() {
 
       <div className="mt-6 w-full max-w-md bg-white p-4 rounded-xl shadow text-center text-gray-700 whitespace-pre-wrap">
         {output}
+        {tracks && tracks.length > 0 && (
+          <div className="grid grid-cols-3 gap-4 mt-6">
+            {tracks.map((track: any, index: number) => (
+              <div
+                key={`${track.id}-${index}`}
+                className="flex flex-col items-center gap-2"
+              >
+                <img src={track.image} alt={track.name} />
+                <p>{track.name}</p>
+                <p>{track.artist}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

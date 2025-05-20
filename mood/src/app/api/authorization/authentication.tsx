@@ -58,14 +58,16 @@ export async function getToken(code: string): Promise<void> {
   };
   try {
     const response: Response = await fetch(url, payload);
-    // response is unsuccessful
     const data: TokenResponse = await response.json();
     localStorage.setItem("access_token", data.access_token);
     if (data.refresh_token) {
       localStorage.setItem("refresh_token", data.refresh_token);
     }
     if (data.expires_in) {
-      localStorage.setItem("expires_in", data.expires_in.toString());
+      localStorage.setItem(
+        "expires_at",
+        (Date.now() + data.expires_in * 1000).toString(),
+      );
     }
   } catch (error: any) {
     alert(`Error: Failed to fetch token: ${error.message}`);
@@ -92,7 +94,7 @@ export async function getRefreshToken(): Promise<void> {
 
   const response: Response = await fetch(url, payload);
   if (!response.ok) {
-    alert(`Error: Failed to refresh token: ${response.statusText}`);
+    throw new Error(`Error: Failed to refresh token: ${response.statusText}`);
   }
 
   const data: TokenResponse = await response.json();
@@ -100,4 +102,8 @@ export async function getRefreshToken(): Promise<void> {
   if (data.refresh_token) {
     localStorage.setItem("refresh_token", data.refresh_token);
   }
+  localStorage.setItem(
+    "expires_at",
+    (Date.now() + data.expires_in * 1000).toString(),
+  );
 }
