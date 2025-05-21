@@ -1,7 +1,6 @@
 import "./globals.css";
 import Input from "@/app/components/input";
 import SpotifyAuth from "@/app/api/authorization/spotifyAuthentication";
-import SongFinder from "@/app/api/authorization/songFinder";
 
 export default function Home() {
   return (

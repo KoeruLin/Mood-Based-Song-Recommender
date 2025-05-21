@@ -2,7 +2,7 @@
 import "../globals.css";
 import React, { useState } from "react";
 import { readID, allTracks } from "@/app/api/readID";
-import { getTracks, getTracksString } from "@/app/api/authorization/songFinder";
+import { getTracksString } from "@/app/api/authorization/songFinder";
 import runQuery from "@/app/api/sentimentAnalysis";
 
 export default function Input() {

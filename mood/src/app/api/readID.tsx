@@ -418,10 +418,12 @@ export const allTracks: emotionsProps = {
 export async function readID(tracksID: string[]): Promise<string[]> {
   let random: string[] = [];
   try {
-    for (let i: number = 0; i < 5; i++) {
+    while (random.length < 6) {
       let randomID: string =
         tracksID[Math.floor(Math.random() * tracksID.length)];
-      random.push(randomID);
+      if (!random.includes(randomID)) {
+        random.push(randomID);
+      }
     }
   } catch (error) {
     console.log("Reading error");
