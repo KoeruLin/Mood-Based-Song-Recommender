@@ -13,14 +13,19 @@ export default function Input() {
   async function handleChange(
     event: React.ChangeEvent<HTMLInputElement>,
   ): Promise<void> {
-    if (event.target.value.trim() === "") {
-      setOutput("");
+    if (!localStorage.getItem("access_token")) {
+      setOutput("Please login to Spotify so I can steal your data.");
+      return;
     }
     setPrompt(event.target.value);
   }
   async function handleSubmit(
     event: React.FormEvent<HTMLFormElement>,
   ): Promise<void> {
+    if (prompt.trim() === "") {
+      return;
+    }
+    setOutput("");
     event.preventDefault();
     const result: string = await runQuery(prompt);
     const trimmedResult: string = JSON.parse(result).toLowerCase().trim();
@@ -57,7 +62,7 @@ export default function Input() {
       </form>
 
       <div className="mt-6 w-full max-w-md bg-white p-4 rounded-xl shadow text-center text-gray-700 whitespace-pre-wrap">
-        {output}
+        <p className="text-lg text-blue-950 font-bold mb-2">{output}</p>
         {tracks && tracks.length > 0 && (
           <div className="grid grid-cols-3 gap-4 mt-6">
             {tracks.map((track: any, index: number) => (
@@ -65,9 +70,17 @@ export default function Input() {
                 key={`${track.id}-${index}`}
                 className="flex flex-col items-center gap-2"
               >
-                <img src={track.image} alt={track.name} />
-                <p>{track.name}</p>
-                <p>{track.artist}</p>
+                <img
+                  className="rounded-full aspect-square object-cover filter drop-shadow-lg"
+                  src={track.image}
+                  alt={track.name}
+                />
+                <p className="text-blue-300 font-bold text-sm mb-2 filter drop-shadow-lg">
+                  {track.name}
+                </p>
+                <p className="text-blue-400 font-bold text-sm mb-2 filter drop-shadow-lg">
+                  {track.artist}
+                </p>
               </div>
             ))}
           </div>

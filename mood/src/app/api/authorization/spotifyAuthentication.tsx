@@ -8,6 +8,8 @@ export async function refreshToken(): Promise<void> {
     await getRefreshToken();
   }
 }
+// if the issue is undefined object then it is due to the access token expiring
+// to refresh the token just negate the above if condition and it will refresh
 
 export default function SpotifyAuth() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -49,15 +51,15 @@ export default function SpotifyAuth() {
   }, []);
 
   return loggedIn ? (
-    <p className="flex justify-center max-w-1/12 bg-blue-500 text-white font-bold py-2 px-4 rounded">
-      Logged In
-    </p>
+    <></>
   ) : (
-    <button
-      onClick={initiateAuthFlow}
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    >
-      Login with Spotify
-    </button>
+    <div className="flex flex-col items-center gap-2">
+      <button
+        onClick={initiateAuthFlow}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Login with Spotify
+      </button>
+    </div>
   );
 }
