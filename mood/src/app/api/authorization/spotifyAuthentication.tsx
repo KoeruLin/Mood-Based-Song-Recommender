@@ -26,7 +26,7 @@ export default function SpotifyAuth() {
     // Extract query parameters from the current URL.
 
     const code: string | null = params.get("code");
-    // Retrieve the `code` parameter (authorization code) from the URL.
+    // Retrieve the authorization code from the URL.
 
     const error: string | null = params.get("error");
     // Retrieve the `error` parameter from the URL, if present.
@@ -35,7 +35,6 @@ export default function SpotifyAuth() {
       // Immediately-invoked asynchronous function to handle the authentication logic.
 
       if (error) {
-        // If an error exists in the URL:
         alert("Authorization denied. Please try again.");
         // Show an alert to the user about the authorization denial.
 
@@ -49,7 +48,6 @@ export default function SpotifyAuth() {
       }
 
       if (code) {
-        // If an authorization code exists:
         try {
           await getToken(code);
           // Use the `getToken` function to exchange the authorization code for an access token.

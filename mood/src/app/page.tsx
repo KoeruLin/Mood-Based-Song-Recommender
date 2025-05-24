@@ -9,7 +9,6 @@ import SpotifyAuth from "@/app/api/authorization/spotifyAuthentication";
 export default function Home() {
   return (
     <>
-      {/* Main content section styled using TailwindCSS. */}
       <main className="mt-6 flex justify-center font-sans items-center flex-col">
         {/* App title */}
         <h1 className="text-4xl font-bold mb-4">SongFinder</h1>
@@ -19,12 +18,8 @@ export default function Home() {
           Connect your Spotify account to get recommendations from the depths of
           your playlists.
         </p>
-
-        {/* Input Component - likely for user interaction (e.g., entering search/query details). */}
         <Input />
       </main>
-
-      {/* SpotifyAuth Component - Handles Spotify authentication process. */}
       <SpotifyAuth />
     </>
   );

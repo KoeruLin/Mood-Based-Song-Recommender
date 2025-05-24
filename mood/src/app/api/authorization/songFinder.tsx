@@ -28,7 +28,7 @@ export async function getTracks(
       {
         // Fetch tracks for the current playlist.
         headers: {
-          Authorization: `Bearer ${accessToken}`, // Access the playlists using the provided access token.
+          Authorization: `Bearer ${accessToken}`,
         },
       },
     );
@@ -39,12 +39,12 @@ export async function getTracks(
         id: song.track.id,
         name: song.track.name,
         artist: song.track.artists[0].name,
-        image: song.track.album.images[2].url, // Use the small album image.
+        image: song.track.album.images[2].url,
         popularity: song.track.popularity,
       });
     }
   }
-  return tracks; // Return the fetched tracks.
+  return tracks;
 }
 
 /**
@@ -64,7 +64,7 @@ export async function getTracksString(
       `https://api.spotify.com/v1/tracks/${playList}`,
       {
         headers: {
-          Authorization: `Bearer ${accessToken}`, // Access the track information using the access token.
+          Authorization: `Bearer ${accessToken}`,
         },
       },
     );
@@ -74,11 +74,11 @@ export async function getTracksString(
       id: tracksData.id,
       name: tracksData.name,
       artist: tracksData.artists[0].name,
-      image: tracksData.album.images[2].url, // Use the smaller album image.
+      image: tracksData.album.images[2].url,
       popularity: tracksData.popularity,
     });
   }
-  return tracks; // Return the fetched track details.
+  return tracks;
 }
 
 /**
@@ -110,7 +110,7 @@ export default function SongFinder() {
           "https://api.spotify.com/v1/me/playlists",
           {
             headers: {
-              Authorization: `Bearer ${accessToken}`, // Include the access token in the request.
+              Authorization: `Bearer ${accessToken}`,
             },
           },
         );
@@ -132,7 +132,7 @@ export default function SongFinder() {
         setOutput("Error fetching user profile: " + error.message);
       }
     })();
-  }, []); // The empty dependency array ensures the effect runs only once (on mount).
+  }, []); // The empty dependency array ensures the effect runs only once on mount.
 
   return (
     <div className="grid grid-cols-3 gap-1">

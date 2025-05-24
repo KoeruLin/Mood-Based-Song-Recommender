@@ -425,7 +425,6 @@ export async function readID(tracksID: string[]): Promise<string[]> {
   try {
     // Keep selecting random IDs until the `random` array contains 6 items.
     while (random.length < 6) {
-      // Select a random ID from the `tracksID` array.
       let randomID: string =
         tracksID[Math.floor(Math.random() * tracksID.length)];
 
@@ -438,5 +437,5 @@ export async function readID(tracksID: string[]): Promise<string[]> {
     // Log an error if something goes wrong during the process.
     console.log("Reading error");
   }
-  return random; // Return the array of 6 unique random IDs.
+  return random;
 }

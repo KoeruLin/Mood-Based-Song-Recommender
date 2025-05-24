@@ -6,7 +6,6 @@ import { getTracksString } from "@/app/api/authorization/songFinder";
 import runQuery from "@/app/api/sentimentAnalysis";
 
 export default function Input() {
-  // State hooks for managing values dynamically.
   const [prompt, setPrompt] = useState(""); // Store user input from the input field.
   const [output, setOutput] = useState(""); // Store the message to display to the user.
   const [tracks, setTracks] = useState<any[]>([]); // Store track data received from the API.
@@ -36,7 +35,7 @@ export default function Input() {
   async function handleSubmit(
     event: React.FormEvent<HTMLFormElement>,
   ): Promise<void> {
-    // Exit early if the prompt field is empty or contains only whitespace.
+    // Exit if the prompt field is empty or contains only whitespace.
     if (prompt.trim() === "") {
       return;
     }
@@ -56,7 +55,7 @@ export default function Input() {
         allTracks[trimmedResult as keyof typeof allTracks];
       const topFiveTracks: string[] = await readID(specificEmotion);
 
-      // Fetch full track details (e.g., image, artist, name) using Spotify's APIs.
+      // Fetch full track details using Spotify's API.
       const fetchedTracks = await getTracksString(
         localStorage.getItem("access_token") as string, // Retrieve the access token.
         topFiveTracks, // Pass the list of track IDs.

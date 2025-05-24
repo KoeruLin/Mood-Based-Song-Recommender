@@ -1,18 +1,16 @@
-// Define an interface for the input structure required by the sentiment analysis API
 export interface SentimentAnalysisInput {
   inputs: string; // The text input for which sentiment analysis will be performed
 }
 
-// Define an interface to represent the sentiment analysis API response structure
 interface SentimentScore {
   label: string; // Emotion or sentiment label
   score: number; // Confidence score for the detected label
 }
 
-// Function to query the sentiment analysis API
+// Function to query the Hugging Face API
 async function query(data: SentimentAnalysisInput): Promise<string> {
   const response: Response = await fetch(
-    "https://router.huggingface.co/hf-inference/models/j-hartmann/emotion-english-distilroberta-base", // API endpoint URL
+    "https://router.huggingface.co/hf-inference/models/j-hartmann/emotion-english-distilroberta-base",
     {
       headers: {
         Authorization: `Bearer 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`, // Authorization header with API key
@@ -47,5 +45,4 @@ async function runQuery(response: string): Promise<string> {
   }
 }
 
-// Export the runQuery function as the default export of the module
 export default runQuery;
