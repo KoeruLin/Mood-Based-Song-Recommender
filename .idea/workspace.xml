@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7e0498e4-9e11-4ced-b7a5-4731cc5cf9c1" name="Changes" comment="Start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/encoder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/encoder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/spotifyAuthentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/spotifyAuthentication.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sortByMood/anger" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sortByMood/disgust" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sortByMood/fear" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sortByMood/joy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sortByMood/neutral" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sortByMood/sadness" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sortByMood/suprise" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/api/sentimentAnalysis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/sentimentAnalysis.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/components/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/input.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +218,9 @@
       <workItem from="1747830635688" duration="1641000" />
       <workItem from="1747843790257" duration="212000" />
       <workItem from="1747915710128" duration="3373000" />
-      <workItem from="1748002521595" duration="2646000" />
+      <workItem from="1748002521595" duration="4290000" />
+      <workItem from="1748009153482" duration="1810000" />
+      <workItem from="1748056302860" duration="308000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />

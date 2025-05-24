@@ -415,18 +415,28 @@ export const allTracks: emotionsProps = {
   surprise: surpriseTrack,
 };
 
+/**
+ * Selects 6 unique random IDs from the given array of track IDs.
+ * @param tracksID - An array of track IDs (strings).
+ * @returns A promise that resolves to an array with 6 unique random track IDs.
+ */
 export async function readID(tracksID: string[]): Promise<string[]> {
-  let random: string[] = [];
+  let random: string[] = []; // Array to hold the randomly selected unique IDs.
   try {
+    // Keep selecting random IDs until the `random` array contains 6 items.
     while (random.length < 6) {
+      // Select a random ID from the `tracksID` array.
       let randomID: string =
         tracksID[Math.floor(Math.random() * tracksID.length)];
+
+      // Add the ID to the `random` array only if it's not already included.
       if (!random.includes(randomID)) {
         random.push(randomID);
       }
     }
   } catch (error) {
+    // Log an error if something goes wrong during the process.
     console.log("Reading error");
   }
-  return random;
+  return random; // Return the array of 6 unique random IDs.
 }
