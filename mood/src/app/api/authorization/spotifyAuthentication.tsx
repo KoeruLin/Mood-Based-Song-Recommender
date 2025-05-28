@@ -4,7 +4,7 @@ import { initiateAuthFlow, getToken, getRefreshToken } from "./authentication";
 
 export async function refreshToken(): Promise<void> {
   const expire: number = Number(localStorage.getItem("expires_at"));
-  if (Date.now() >= expire) {
+  if (!(Date.now() >= expire - 6000)) {
     await getRefreshToken();
   }
 }
@@ -12,8 +12,6 @@ export async function refreshToken(): Promise<void> {
 // to refresh the token just negate the above if condition and it will refresh
 
 export default function SpotifyAuth() {
-  // This is a React functional component to handle the Spotify authentication logic.
-
   const [loggedIn, setLoggedIn] = useState(false);
   // State variable `loggedIn` to indicate whether the user is logged in. Defaults to `false`.
 
@@ -84,7 +82,6 @@ export default function SpotifyAuth() {
         onClick={initiateAuthFlow}
         // Trigger the authentication flow when the button is clicked.
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        // Tailwind CSS classes for styling the button.
       >
         Login with Spotify
         {/* Button label */}

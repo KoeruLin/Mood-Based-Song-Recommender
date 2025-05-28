@@ -8,6 +8,7 @@ interface Track {
   artist: string;
   image: string;
   popularity: number;
+  url: string;
 }
 
 /**
@@ -41,6 +42,7 @@ export async function getTracks(
         artist: song.track.artists[0].name,
         image: song.track.album.images[2].url,
         popularity: song.track.popularity,
+        url: song.track.external_urls.spotify,
       });
     }
   }
@@ -76,6 +78,7 @@ export async function getTracksString(
       artist: tracksData.artists[0].name,
       image: tracksData.album.images[2].url,
       popularity: tracksData.popularity,
+      url: tracksData.external_urls.spotify,
     });
   }
   return tracks;
@@ -139,7 +142,7 @@ export default function SongFinder() {
       {/* Display the fetched tracks as a grid. */}
       {songs.map((song: Track, index: number) => (
         <div
-          key={`${song.id}-${index}`} // Use song ID and index for a unique key.
+          key={`${song.id}-${index}`}
           className="flex flex-col items-center gap-2"
         >
           <img src={song.image} alt={song.name} /> {/* Song album cover */}
@@ -147,10 +150,10 @@ export default function SongFinder() {
           <p>{song.name}</p> {/* Song name */}
           <p>{song.artist}</p> {/* Artist name */}
           <p>{song.popularity}</p> {/* Song popularity */}
-          <hr /> {/* Divider */}
+          <hr />
         </div>
       ))}
-      {output} {/* Display any error messages or feedback */}
+      {output} {/* Display error message */}
     </div>
   );
 }

@@ -77,7 +77,7 @@ export default function Input() {
         <input
           name="Prompt"
           onChange={handleChange} // Listen for changes to update the prompt state.
-          placeholder="Enter Prompt" // Placeholder text for the input.
+          placeholder="Enter Prompt" // Placeholder text
           className="flex-grow border border-gray-300 rounded-lg text-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         {/* Submit button */}
@@ -90,31 +90,34 @@ export default function Input() {
       </form>
 
       {/* Output container */}
-      <div className="mt-6 w-full max-w-md bg-white p-4 rounded-xl shadow text-center text-gray-700 whitespace-pre-wrap">
+      <div className="mt-6 w-full bg-white p-4 rounded-xl shadow text-center text-gray-700 whitespace-pre-wrap">
         {/* Display the output message */}
         <p className="text-lg text-blue-950 font-bold mb-2">{output}</p>
-
-        {/* Conditionally render track cards if tracks are available */}
+        {/* Map over all tracks found*/}
         {tracks && tracks.length > 0 && (
-          <div className="grid grid-cols-3 gap-4 mt-6">
-            {/* Map over the fetched tracks to render them */}
-            {tracks.map((track: any, index: number) => (
+          <div className="flex flex-col space-y-6 mt-4">
+            {tracks.map((track: any, index: number): any => (
               <div
-                key={`${track.id}-${index}`} // Unique key for each track (combination of ID and index).
-                className="flex flex-col items-center gap-2"
+                key={`${track.id}-${index}`} // Unique key for each track (ID - Index).
+                className="flex flex-row items-center gap-4"
               >
                 {/* Track image */}
                 <img
-                  className="rounded-full aspect-square object-cover filter drop-shadow-lg"
+                  className="size-1/8 rounded-full aspect-square object-cover filter drop-shadow-lg"
                   src={track.image} // Display track image.
                   alt={track.name} // Accessibility text for the image.
                 />
                 {/* Track name */}
-                <p className="text-blue-300 font-bold text-sm mb-2 filter drop-shadow-lg">
+                <button
+                  onClick={(): Window | null =>
+                    window.open(track.url, "_blank")
+                  }
+                  className="text-blue-300 font-bold text-base mb-2 filter drop-shadow-lg hover: underline cursor-pointer"
+                >
                   {track.name}
-                </p>
+                </button>
                 {/* Track artist */}
-                <p className="text-blue-400 font-bold text-sm mb-2 filter drop-shadow-lg">
+                <p className="text-blue-400 font-bold text-base mb-2 filter drop-shadow-lg">
                   {track.artist}
                 </p>
               </div>

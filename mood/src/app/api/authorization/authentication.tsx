@@ -10,7 +10,7 @@ import {
 // Defining the expected structure of the token response from Spotify's API
 interface TokenResponse {
   access_token: string; // The OAuth access token
-  token_type: string; // Type of the token (usually "Bearer")
+  token_type: string; // Type of the token
   scope: string; // The scopes granted with this token
   expires_in: number; // Expiration time in seconds
   refresh_token?: string; // Optional refresh token for renewing the access token
