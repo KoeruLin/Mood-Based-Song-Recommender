@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7e0498e4-9e11-4ced-b7a5-4731cc5cf9c1" name="Changes" comment="Start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/authentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/authentication.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/songFinder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/songFinder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/api/authorization/spotifyAuthentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/api/authorization/spotifyAuthentication.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/components/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/components/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mood/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mood/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mood/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +32,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -95,10 +97,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mood/src/app/images" />
+      <recent name="$PROJECT_DIR$/mood/src" />
       <recent name="$PROJECT_DIR$/mood/src/app/api" />
       <recent name="$PROJECT_DIR$/mood" />
       <recent name="$PROJECT_DIR$/mood/src/app/components" />
-      <recent name="$PROJECT_DIR$/mood/src/app" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -223,7 +226,11 @@
       <workItem from="1748056302860" duration="614000" />
       <workItem from="1748057067515" duration="465000" />
       <workItem from="1748348580541" duration="1572000" />
-      <workItem from="1748434308134" duration="2061000" />
+      <workItem from="1748434308134" duration="2256000" />
+      <workItem from="1748521572081" duration="767000" />
+      <workItem from="1748522342343" duration="8000" />
+      <workItem from="1748522381891" duration="2926000" />
+      <workItem from="1748525813018" duration="281000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />

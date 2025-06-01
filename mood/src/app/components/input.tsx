@@ -78,7 +78,7 @@ export default function Input() {
           name="Prompt"
           onChange={handleChange} // Listen for changes to update the prompt state.
           placeholder="Enter Prompt" // Placeholder text
-          className="flex-grow border border-gray-300 rounded-lg text-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="flex-grow border border-gray-300 rounded-lg text-lg p-3 bg-gray-100 dark:bg-gray-900 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-violet-600"
         />
         {/* Submit button */}
         <button

@@ -135,25 +135,20 @@ export default function SongFinder() {
         setOutput("Error fetching user profile: " + error.message);
       }
     })();
-  }, []); // The empty dependency array ensures the effect runs only once on mount.
+  }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-1">
-      {/* Display the fetched tracks as a grid. */}
-      {songs.map((song: Track, index: number) => (
+    <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 bg-gray-100 dark:bg-gray-900 p-4">
+      {songs.map((song: Track) => (
         <div
-          key={`${song.id}-${index}`}
-          className="flex flex-col items-center gap-2"
+          key={song.id}
+          className="p-4 shadow-md rounded-md bg-white dark:bg-gray-800 text-black dark:text-white"
         >
-          <img src={song.image} alt={song.name} /> {/* Song album cover */}
-          <p>{song.id}</p> {/* Song ID */}
-          <p>{song.name}</p> {/* Song name */}
-          <p>{song.artist}</p> {/* Artist name */}
-          <p>{song.popularity}</p> {/* Song popularity */}
-          <hr />
+          <img src={song.image} alt={song.name} className="rounded-md" />
+          <h3 className="mt-2 font-bold">{song.name}</h3>
+          <p>{song.artist}</p>
         </div>
       ))}
-      {output} {/* Display error message */}
     </div>
   );
 }

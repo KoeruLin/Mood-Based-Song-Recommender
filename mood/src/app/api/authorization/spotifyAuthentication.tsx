@@ -4,7 +4,7 @@ import { initiateAuthFlow, getToken, getRefreshToken } from "./authentication";
 
 export async function refreshToken(): Promise<void> {
   const expire: number = Number(localStorage.getItem("expires_at"));
-  if (!(Date.now() >= expire - 6000)) {
+  if (Date.now() >= expire - 6000) {
     await getRefreshToken();
   }
 }
